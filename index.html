@@ -1,0 +1,414 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Poxdorf App – Dein digitales Dorf</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'poxdorf': {
+                            50: '#f0fdf4',
+                            100: '#dcfce7',
+                            500: '#22c55e',
+                            600: '#16a34a',
+                            700: '#15803d',
+                            800: '#166534',
+                            900: '#14532d',
+                        },
+                        'accent': '#f59e0b',
+                    },
+                    fontFamily: {
+                        'sans': ['Inter', 'system-ui', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        .gradient-hero {
+            background: linear-gradient(135deg, #166534 0%, #15803d 50%, #22c55e 100%);
+        }
+        .feature-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+        }
+        .feature-card {
+            transition: all 0.3s ease;
+        }
+    </style>
+</head>
+<body class="font-sans bg-gray-50 text-gray-900">
+
+    <!-- Transparency Banner -->
+    <div class="bg-amber-500 text-amber-950 py-2 px-4 text-center text-sm font-medium">
+        🎯 Diese App möchte die <strong>offizielle Poxdorf-App</strong> werden. 
+        <a href="#vision" class="underline hover:no-underline">Mehr erfahren →</a>
+    </div>
+
+    <!-- Navigation -->
+    <nav class="bg-white shadow-sm fixed w-full z-50 top-8">
+        <div class="max-w-6xl mx-auto px-4 py-4 flex justify-between items-center">
+            <div class="flex items-center gap-3">
+                <div class="w-10 h-10 bg-poxdorf-600 rounded-xl flex items-center justify-center">
+                    <span class="text-white font-bold text-lg">P</span>
+                </div>
+                <span class="font-bold text-xl text-poxdorf-800">Poxdorf</span>
+            </div>
+            <div class="hidden md:flex gap-6 text-gray-600">
+                <a href="#features" class="hover:text-poxdorf-600 transition">Features</a>
+                <a href="#kalender" class="hover:text-poxdorf-600 transition">Kalender</a>
+                <a href="#muell" class="hover:text-poxdorf-600 transition">Müllabfuhr</a>
+                <a href="#kontakt" class="hover:text-poxdorf-600 transition">Kontakt</a>
+            </div>
+            <button class="bg-poxdorf-600 text-white px-5 py-2 rounded-lg font-medium hover:bg-poxdorf-700 transition">
+                App laden
+            </button>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <header class="gradient-hero pt-32 pb-20 px-4">
+        <div class="max-w-6xl mx-auto text-center">
+            <h1 class="text-4xl md:text-6xl font-extrabold text-white mb-6 leading-tight">
+                Dein digitales<br>Poxdorf
+            </h1>
+            <p class="text-xl text-poxdorf-100 mb-8 max-w-2xl mx-auto">
+                Alle Infos deiner Gemeinde in einer App. Veranstaltungen, Müllkalender, 
+                Neuigkeiten und mehr – immer aktuell, immer dabei.
+            </p>
+            <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                <button class="bg-white text-poxdorf-700 px-8 py-4 rounded-xl font-semibold text-lg hover:bg-gray-100 transition flex items-center justify-center gap-2">
+                    <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24"><path d="M17.05 20.28c-.98.95-2.05.8-3.08.35-1.09-.46-2.09-.48-3.24 0-1.44.62-2.2.44-3.06-.35C2.79 15.25 3.51 7.59 9.05 7.31c1.35.07 2.29.74 3.08.8 1.18-.24 2.31-.93 3.57-.84 1.51.12 2.65.72 3.4 1.8-3.12 1.87-2.38 5.98.48 7.13-.57 1.5-1.31 2.99-2.53 4.08zM12.03 7.25c-.15-2.23 1.66-4.07 3.74-4.25.29 2.58-2.34 4.5-3.74 4.25z"/></svg>
+                    App Store
+                </button>
+                <button class="bg-poxdorf-800 text-white px-8 py-4 rounded-xl font-semibold text-lg hover:bg-poxdorf-900 transition flex items-center justify-center gap-2">
+                    <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24"><path d="M3.609 1.814L13.792 12 3.61 22.186a.996.996 0 01-.61-.92V2.734a1 1 0 01.609-.92zm10.89 10.893l2.302 2.302-10.937 6.333 8.635-8.635zm3.199-3.198l2.807 1.626a1 1 0 010 1.73l-2.808 1.626L15.206 12l2.492-2.491zM5.864 2.658L16.802 8.99l-2.303 2.303-8.635-8.635z"/></svg>
+                    Google Play
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Stats Bar -->
+    <section class="bg-white py-8 shadow-sm">
+        <div class="max-w-6xl mx-auto px-4 grid grid-cols-3 gap-8 text-center">
+            <div>
+                <div class="text-3xl font-bold text-poxdorf-600">~800</div>
+                <div class="text-gray-500">Einwohner</div>
+            </div>
+            <div>
+                <div class="text-3xl font-bold text-poxdorf-600">100%</div>
+                <div class="text-gray-500">Kostenlos</div>
+            </div>
+            <div>
+                <div class="text-3xl font-bold text-poxdorf-600">24/7</div>
+                <div class="text-gray-500">Verfügbar</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section id="features" class="py-20 px-4">
+        <div class="max-w-6xl mx-auto">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-4xl font-bold mb-4">Alles was du brauchst</h2>
+                <p class="text-gray-600 text-lg max-w-2xl mx-auto">
+                    Die Poxdorf App vereint alle wichtigen Informationen deiner Gemeinde an einem Ort.
+                </p>
+            </div>
+            
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                
+                <!-- Feature: Müllkalender -->
+                <div id="muell" class="feature-card bg-white rounded-2xl p-8 shadow-lg">
+                    <div class="w-14 h-14 bg-green-100 rounded-xl flex items-center justify-center mb-6">
+                        <span class="text-3xl">🗑️</span>
+                    </div>
+                    <h3 class="text-xl font-bold mb-3">Müllkalender</h3>
+                    <p class="text-gray-600 mb-4">
+                        Push-Erinnerung am Vorabend. Nie wieder die Tonne vergessen!
+                    </p>
+                    <ul class="text-sm text-gray-500 space-y-2">
+                        <li class="flex items-center gap-2">
+                            <svg class="w-4 h-4 text-green-500" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg>
+                            Adressbasierte Termine
+                        </li>
+                        <li class="flex items-center gap-2">
+                            <svg class="w-4 h-4 text-green-500" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg>
+                            Restmüll, Papier, Gelber Sack
+                        </li>
+                        <li class="flex items-center gap-2">
+                            <svg class="w-4 h-4 text-green-500" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg>
+                            Kalender-Export
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- Feature: Veranstaltungen -->
+                <div id="kalender" class="feature-card bg-white rounded-2xl p-8 shadow-lg">
+                    <div class="w-14 h-14 bg-blue-100 rounded-xl flex items-center justify-center mb-6">
+                        <span class="text-3xl">📅</span>
+                    </div>
+                    <h3 class="text-xl font-bold mb-3">Veranstaltungen</h3>
+                    <p class="text-gray-600 mb-4">
+                        Alle Events in Poxdorf und Umgebung. Mit Erinnerungsfunktion.
+                    </p>
+                    <ul class="text-sm text-gray-500 space-y-2">
+                        <li class="flex items-center gap-2">
+                            <svg class="w-4 h-4 text-green-500" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg>
+                            Dorffeste & Märkte
+                        </li>
+                        <li class="flex items-center gap-2">
+                            <svg class="w-4 h-4 text-green-500" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg>
+                            Vereinstermine
+                        </li>
+                        <li class="flex items-center gap-2">
+                            <svg class="w-4 h-4 text-green-500" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg>
+                            Push bei Start
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- Feature: Flyer Scanner (NEU!) -->
+                <div class="feature-card bg-white rounded-2xl p-8 shadow-lg border-2 border-accent">
+                    <div class="absolute -mt-12 ml-48">
+                        <span class="bg-accent text-white text-xs font-bold px-3 py-1 rounded-full">NEU</span>
+                    </div>
+                    <div class="w-14 h-14 bg-amber-100 rounded-xl flex items-center justify-center mb-6">
+                        <span class="text-3xl">📸</span>
+                    </div>
+                    <h3 class="text-xl font-bold mb-3">Flyer Scanner</h3>
+                    <p class="text-gray-600 mb-4">
+                        Fotografiere einen Flyer – die App erstellt automatisch einen Kalendereintrag.
+                    </p>
+                    <ul class="text-sm text-gray-500 space-y-2">
+                        <li class="flex items-center gap-2">
+                            <svg class="w-4 h-4 text-green-500" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg>
+                            KI-Texterkennung
+                        </li>
+                        <li class="flex items-center gap-2">
+                            <svg class="w-4 h-4 text-green-500" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg>
+                            Automatisch in Kalender
+                        </li>
+                        <li class="flex items-center gap-2">
+                            <svg class="w-4 h-4 text-green-500" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg>
+                            Teilen mit Nachbarn
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- Feature: News -->
+                <div class="feature-card bg-white rounded-2xl p-8 shadow-lg">
+                    <div class="w-14 h-14 bg-purple-100 rounded-xl flex items-center justify-center mb-6">
+                        <span class="text-3xl">📰</span>
+                    </div>
+                    <h3 class="text-xl font-bold mb-3">Dorfnachrichten</h3>
+                    <p class="text-gray-600 mb-4">
+                        Aktuelle Meldungen der Gemeinde. Baustellen, Sperrungen, Neuigkeiten.
+                    </p>
+                    <ul class="text-sm text-gray-500 space-y-2">
+                        <li class="flex items-center gap-2">
+                            <svg class="w-4 h-4 text-green-500" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg>
+                            Offizielle Mitteilungen
+                        </li>
+                        <li class="flex items-center gap-2">
+                            <svg class="w-4 h-4 text-green-500" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg>
+                            Vereinsnews
+                        </li>
+                        <li class="flex items-center gap-2">
+                            <svg class="w-4 h-4 text-green-500" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg>
+                            Push-Benachrichtigung
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- Feature: Notfall -->
+                <div class="feature-card bg-white rounded-2xl p-8 shadow-lg">
+                    <div class="w-14 h-14 bg-red-100 rounded-xl flex items-center justify-center mb-6">
+                        <span class="text-3xl">🚨</span>
+                    </div>
+                    <h3 class="text-xl font-bold mb-3">Notfallinformationen</h3>
+                    <p class="text-gray-600 mb-4">
+                        Wichtige Nummern und Anlaufstellen – offline verfügbar.
+                    </p>
+                    <ul class="text-sm text-gray-500 space-y-2">
+                        <li class="flex items-center gap-2">
+                            <svg class="w-4 h-4 text-green-500" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg>
+                            Ärzte & Apotheken
+                        </li>
+                        <li class="flex items-center gap-2">
+                            <svg class="w-4 h-4 text-green-500" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg>
+                            Feuerwehr & Polizei
+                        </li>
+                        <li class="flex items-center gap-2">
+                            <svg class="w-4 h-4 text-green-500" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg>
+                            Auch offline nutzbar
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- Feature: Kontakte -->
+                <div id="kontakt" class="feature-card bg-white rounded-2xl p-8 shadow-lg">
+                    <div class="w-14 h-14 bg-teal-100 rounded-xl flex items-center justify-center mb-6">
+                        <span class="text-3xl">👥</span>
+                    </div>
+                    <h3 class="text-xl font-bold mb-3">Gemeindekontakte</h3>
+                    <p class="text-gray-600 mb-4">
+                        Rathaus, Vereine, Ansprechpartner – alle Kontakte auf einen Blick.
+                    </p>
+                    <ul class="text-sm text-gray-500 space-y-2">
+                        <li class="flex items-center gap-2">
+                            <svg class="w-4 h-4 text-green-500" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg>
+                            Rathaus & Verwaltung
+                        </li>
+                        <li class="flex items-center gap-2">
+                            <svg class="w-4 h-4 text-green-500" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg>
+                            Vereine & Gruppen
+                        </li>
+                        <li class="flex items-center gap-2">
+                            <svg class="w-4 h-4 text-green-500" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg>
+                            Direkt anrufen/mailen
+                        </li>
+                    </ul>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Regional Network Teaser -->
+    <section class="bg-poxdorf-800 py-16 px-4">
+        <div class="max-w-4xl mx-auto text-center">
+            <h2 class="text-2xl md:text-3xl font-bold text-white mb-4">
+                Verbunden mit der Region
+            </h2>
+            <p class="text-poxdorf-200 text-lg mb-8">
+                Sieh auch Veranstaltungen aus Nachbargemeinden. Poxdorf ist Teil eines wachsenden Netzwerks.
+            </p>
+            <div class="flex flex-wrap justify-center gap-4">
+                <span class="bg-poxdorf-700 text-poxdorf-100 px-4 py-2 rounded-full">Pinzberg</span>
+                <span class="bg-poxdorf-700 text-poxdorf-100 px-4 py-2 rounded-full">Effeltrich</span>
+                <span class="bg-poxdorf-700 text-poxdorf-100 px-4 py-2 rounded-full">Kunreuth</span>
+                <span class="bg-poxdorf-700 text-poxdorf-100 px-4 py-2 rounded-full">Wiesenthau</span>
+                <span class="bg-poxdorf-700 text-poxdorf-100 px-4 py-2 rounded-full">+ weitere</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- Vision Section -->
+    <section id="vision" class="py-16 px-4 bg-white">
+        <div class="max-w-4xl mx-auto">
+            <div class="bg-amber-50 border-2 border-amber-200 rounded-2xl p-8 md:p-12">
+                <div class="text-center mb-8">
+                    <span class="text-4xl mb-4 block">🎯</span>
+                    <h2 class="text-2xl md:text-3xl font-bold text-amber-900 mb-4">
+                        Unsere Vision: Die offizielle Poxdorf-App
+                    </h2>
+                </div>
+                <div class="text-amber-800 space-y-4">
+                    <p>
+                        Wir haben diese App entwickelt, weil wir glauben, dass Poxdorf eine 
+                        <strong>moderne, benutzerfreundliche Gemeinde-App</strong> verdient hat.
+                    </p>
+                    <p>
+                        Aktuell ist dies ein <strong>Community-Projekt</strong>. Unser Ziel ist es, 
+                        gemeinsam mit der Gemeinde Poxdorf diese App zur <strong>offiziellen 
+                        Gemeinde-App</strong> zu machen.
+                    </p>
+                    <p>
+                        Je mehr Bürger die App nutzen, desto mehr zeigen wir, dass Bedarf besteht. 
+                        <strong>Ihre Nutzung zählt!</strong>
+                    </p>
+                </div>
+                <div class="mt-8 pt-8 border-t border-amber-200 grid md:grid-cols-3 gap-6 text-center">
+                    <div>
+                        <div class="text-3xl font-bold text-amber-600" id="user-count">127</div>
+                        <div class="text-amber-700 text-sm">Aktive Nutzer</div>
+                    </div>
+                    <div>
+                        <div class="text-3xl font-bold text-amber-600" id="event-count">23</div>
+                        <div class="text-amber-700 text-sm">Geteilte Events</div>
+                    </div>
+                    <div>
+                        <div class="text-3xl font-bold text-amber-600">📬</div>
+                        <div class="text-amber-700 text-sm">Gemeinde informiert</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="py-20 px-4 bg-gray-100">
+        <div class="max-w-4xl mx-auto text-center">
+            <h2 class="text-3xl md:text-4xl font-bold mb-6">
+                Bereit für dein digitales Poxdorf?
+            </h2>
+            <p class="text-gray-600 text-lg mb-8">
+                Kostenlos für alle Bürger. Einfach herunterladen und loslegen.
+            </p>
+            <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                <button class="bg-poxdorf-600 text-white px-8 py-4 rounded-xl font-semibold text-lg hover:bg-poxdorf-700 transition">
+                    Jetzt herunterladen
+                </button>
+                <button class="bg-white text-gray-700 px-8 py-4 rounded-xl font-semibold text-lg border border-gray-300 hover:bg-gray-50 transition">
+                    Mehr erfahren
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-gray-400 py-12 px-4">
+        <div class="max-w-6xl mx-auto">
+            <div class="grid md:grid-cols-4 gap-8 mb-8">
+                <div>
+                    <div class="flex items-center gap-3 mb-4">
+                        <div class="w-10 h-10 bg-poxdorf-600 rounded-xl flex items-center justify-center">
+                            <span class="text-white font-bold text-lg">P</span>
+                        </div>
+                        <span class="font-bold text-xl text-white">Poxdorf</span>
+                    </div>
+                    <p class="text-sm">
+                        Die offizielle App für Poxdorf und Umgebung.
+                    </p>
+                </div>
+                <div>
+                    <h4 class="text-white font-semibold mb-4">Features</h4>
+                    <ul class="space-y-2 text-sm">
+                        <li><a href="#" class="hover:text-white transition">Müllkalender</a></li>
+                        <li><a href="#" class="hover:text-white transition">Veranstaltungen</a></li>
+                        <li><a href="#" class="hover:text-white transition">Dorfnachrichten</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="text-white font-semibold mb-4">Rechtliches</h4>
+                    <ul class="space-y-2 text-sm">
+                        <li><a href="#" class="hover:text-white transition">Impressum</a></li>
+                        <li><a href="#" class="hover:text-white transition">Datenschutz</a></li>
+                        <li><a href="#" class="hover:text-white transition">Nutzungsbedingungen</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="text-white font-semibold mb-4">Kontakt</h4>
+                    <ul class="space-y-2 text-sm">
+                        <li>Gemeinde Poxdorf</li>
+                        <li>Hauptstraße 1</li>
+                        <li>91099 Poxdorf</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="border-t border-gray-800 pt-8 text-center text-sm">
+                <p>© 2026 Poxdorf App – Ein Projekt von United DigiArt Vision</p>
+            </div>
+        </div>
+    </footer>
+
+</body>
+</html>
